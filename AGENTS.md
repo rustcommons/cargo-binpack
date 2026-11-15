@@ -2,7 +2,7 @@
 
 ## Project scope
 
-This repository is currently a placeholder containing documentation, a license, and Git ignore rules. Its implementation and package interface are not established. Repository maintenance workflows do not establish runtime behavior. Do not infer functionality from its name.
+This repository is currently a placeholder containing documentation, a license, Git ignore rules, and repository maintenance configuration. Its implementation and package interface are not established. Repository maintenance workflows do not establish runtime behavior. Do not infer functionality from its name.
 
 The owner is reviewing names and scope for Rust Commons' offline Rust development and package-management projects. Do not rename this repository, invent capabilities, or expand its public documentation without an explicit task.
 
