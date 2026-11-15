@@ -38,7 +38,8 @@ No manifest, runtime test suite, or build command is currently defined. For docu
 
 - All changes to main go through a pull request. Never push directly to main; retain the required `lf-only` check and obtain independent approval before merging.
 - Pin every external action to its full commit SHA with a trailing version-tag comment. Keep workflow permissions read-only at the top level, elevate only the job that needs them, and disable persisted checkout credentials.
-- Require green line-ending and zizmor PR checks before merging. Zizmor runs in failure-on-findings mode; fix findings or justify narrow suppressions inline. Keep Dependabot weekly Actions updates enabled and review its grouped minor/patch changes.
+- Require green line-ending and zizmor PR checks before merging. Zizmor runs in failure-on-findings mode; fix findings or justify narrow suppressions inline. Keep Dependabot monthly Actions version updates enabled with a two-PR limit, grouped minor/patch changes, and the existing cooldown. Security updates remain independent of that version-update schedule.
+- Give every repository-owned PR workflow a workflow-scoped, per-PR concurrency group with cancellation of superseded runs. Dependabot PRs run core checks only; retain `lf-only`, zizmor, and managed CodeQL. Gate any future expensive matrices or qualification jobs away from Dependabot PRs. Do not merge Dependabot PRs without explicit approval.
 - Keep Scorecard analysis on main pushes and weekly schedules, publishing results and uploading SARIF. Its first execution requires the workflow on main; verify that run after merge and record failures honestly.
 - This placeholder has no Cargo manifest, published crate, or binary release. Cargo-deny, Cargo updates, Trusted Publishing, SBOMs, reproducibility checks, and release provenance are not applicable until authorized software exists. Do not add release or SLSA badges without evidence.
 
