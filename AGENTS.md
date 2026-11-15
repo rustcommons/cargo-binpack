@@ -2,7 +2,7 @@
 
 ## Project scope
 
-This repository is currently a placeholder containing documentation, a license, and Git ignore rules. Its implementation, package interface, and workflows are not established. Do not infer functionality from its name.
+This repository is currently a placeholder containing documentation, a license, Git ignore rules, and repository maintenance configuration. Its implementation and package interface are not established. Repository maintenance workflows do not establish runtime behavior. Do not infer functionality from its name.
 
 The owner is reviewing names and scope for Rust Commons' offline Rust development and package-management projects. Do not rename this repository, invent capabilities, or expand its public documentation without an explicit task.
 
@@ -14,7 +14,7 @@ The owner is reviewing names and scope for Rust Commons' offline Rust developmen
 - `CLAUDE.md`: compatibility pointer to this file.
 - `docs/REQUIREMENTS.md`: confirmed requirements, bounded evidence, and gaps.
 
-No manifest, automated test suite, or build command is currently defined. For documentation-only changes, check Markdown links, instruction-file consistency, and `git diff --check`. If implementation is added, document its actual setup and validation commands here.
+No manifest, runtime test suite, or build command is currently defined. For documentation-only changes, check Markdown links, instruction-file consistency, and `git diff --check`. If implementation is added, document its actual setup and validation commands here.
 
 ## Documentation and requirements traceability
 
@@ -33,6 +33,14 @@ No manifest, automated test suite, or build command is currently defined. For do
 - Run the repository's release-documentation CI check before routine merges and release completion. For its first installation, review local checker/syntax evidence, register the workflow on the default branch, and require a green run before completing bootstrap or publishing notes. Verify the live GitHub Release and its tag, text and links after publication; a successful crate upload or tag alone is insufficient.
 - When backfilling history, reconstruct facts from existing tags, registry records and source/evidence. Preserve original source identities, distinguish original release dates from documentation backfill dates, and state unavailable historical validation. Never fabricate checks, move tags, republish versions, or imply that repository edits change immutable published archives.
 - For an organization profile, placeholder or project with no shipped version, record release verification as not applicable until its first authorized release. Do not invent versions, features, changelog history or GitHub Releases to satisfy this convention.
+
+## Security maintenance
+
+- All changes to main go through a pull request. Never push directly to main; retain the required `lf-only` check and obtain independent approval before merging.
+- Pin every external action to its full commit SHA with a trailing version-tag comment. Keep workflow permissions read-only at the top level, elevate only the job that needs them, and disable persisted checkout credentials.
+- Require green line-ending and zizmor PR checks before merging. Zizmor runs in failure-on-findings mode; fix findings or justify narrow suppressions inline. Keep Dependabot weekly Actions updates enabled and review its grouped minor/patch changes.
+- Keep Scorecard analysis on main pushes and weekly schedules, publishing results and uploading SARIF. Its first execution requires the workflow on main; verify that run after merge and record failures honestly.
+- This placeholder has no Cargo manifest, published crate, or binary release. Cargo-deny, Cargo updates, Trusted Publishing, SBOMs, reproducibility checks, and release provenance are not applicable until authorized software exists. Do not add release or SLSA badges without evidence.
 
 ## Working conventions
 

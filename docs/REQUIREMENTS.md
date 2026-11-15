@@ -44,6 +44,7 @@ applicable until its first authorized release.
 | CB-REQ-006 | Preserve the existing license. Source: baseline AGENTS.md, Repository layout and validation. | [LICENSE](../LICENSE). | Compare LICENSE with baseline (`git diff 4d4b99389989b08d986801e60b993fd75f0690c5 -- LICENSE`): unchanged. | Verified. Evidence is limited to preservation of the existing file. |
 | CB-REQ-007 | Runtime implementation and verification are outside the confirmed placeholder scope. Source: baseline AGENTS.md, Project scope and Repository layout and validation. | No runtime implementation or validation is established. | Not applicable; no builds, installs, or runtime tests apply to this documentation audit. | Not applicable. A future approved scope and actual implementation would require their own requirements and evidence. |
 | CB-REQ-008 | Adopt the shared release-documentation instructions; release verification is excluded until the first authorized release. Source: [AGENTS.md, Release documentation](../AGENTS.md#release-documentation) and the [central convention](https://github.com/rustcommons/.github/blob/main/docs/RELEASING.md). | Exact shared instructions in AGENTS.md; this placeholder creates no version, changelog history, release notes, GitHub Release, or release checker. | On 2026-11-02, source inspection at baseline `031548a1e54313c729ee9145dc60995e3a4ba402` found documentation, license, and ignore rules only. The new AGENTS section matches the supplied shared text byte for byte; this checks instruction adoption only. | Not applicable. No shipped software exists here; release verification awaits the first authorized release. No release or runtime validation is claimed. |
+| CB-REQ-009 | Apply the owner-approved security baseline (2026-11-15). Source: [security maintenance instructions](../AGENTS.md#security-maintenance). | [Dependabot](../.github/dependabot.yml), [zizmor CI](../.github/workflows/security.yml), [Scorecard](../.github/workflows/scorecard.yml), [line endings](../.github/workflows/line-endings.yml), and README badges; external actions pinned, read-only defaults and job-scoped write permissions. | Workflow source review; PR check evidence is recorded in the security baseline PR. Scorecard runs only on main and weekly; first-run evidence remains pending until merge. | Implemented—partial verification. PR CI must pass; Scorecard publication and SARIF upload require a successful main run. No Cargo project, published crates, or binaries exist: Cargo auditing, publishing, SBOM, reproducibility and SLSA release verification are Not applicable. |
 
 ## Documentation map
 
@@ -57,13 +58,17 @@ applicable until its first authorized release.
 | [Shared release-documentation convention](https://github.com/rustcommons/.github/blob/main/docs/RELEASING.md) | Release records and completion gates; release verification is Not applicable to this placeholder until its first authorized release. |
 | [Shared documentation conventions](https://github.com/rustcommons/.github/blob/main/docs/DOCUMENTATION.md) | Central conventions; shared-link availability confirmed on 2026-11-01 as recorded above. |
 
+The security baseline adds repository maintenance CI without establishing runtime
+behavior. Its owner-approved source is dated 2026-11-15; earlier audit evidence
+above remains historical.
+
 No maintained setup guide, roadmap, release record, or runtime validation report
 exists in the inspected repository. Do not create such claims from unreviewed
 local material or interpret future ideas as approved requirements.
 
 ## Maintenance
 
-Preserve `CB-REQ-001` through `CB-REQ-008`. Assign the next unused numeric suffix
+Preserve `CB-REQ-001` through `CB-REQ-009`. Assign the next unused numeric suffix
 for newly confirmed requirements; never renumber or reuse an ID. Keep retired IDs
 with their rationale. Record the actual source before adding a product requirement.
 
